@@ -1,0 +1,5 @@
+output "cognitive_account_rai_policys" {
+  description = "All cognitive_account_rai_policy resources"
+  value       = azurerm_cognitive_account_rai_policy.cognitive_account_rai_policys
+}
+
