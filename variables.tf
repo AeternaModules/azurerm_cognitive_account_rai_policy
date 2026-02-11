@@ -1,6 +1,6 @@
-variable "cognitive_account_rai_policys" {
+variable "cognitive_account_rai_policies" {
   description = <<EOT
-Map of cognitive_account_rai_policys, attributes below
+Map of cognitive_account_rai_policies, attributes below
 Required:
     - base_policy_name
     - cognitive_account_id

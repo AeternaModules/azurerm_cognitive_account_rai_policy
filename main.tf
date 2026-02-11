@@ -1,5 +1,5 @@
-resource "azurerm_cognitive_account_rai_policy" "cognitive_account_rai_policys" {
-  for_each = var.cognitive_account_rai_policys
+resource "azurerm_cognitive_account_rai_policy" "cognitive_account_rai_policies" {
+  for_each = var.cognitive_account_rai_policies
 
   base_policy_name     = each.value.base_policy_name
   cognitive_account_id = each.value.cognitive_account_id
