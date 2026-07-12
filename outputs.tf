@@ -1,3 +1,7 @@
+output "cognitive_account_rai_policies_id" {
+  description = "Map of id values across all cognitive_account_rai_policies, keyed the same as var.cognitive_account_rai_policies"
+  value       = { for k, v in azurerm_cognitive_account_rai_policy.cognitive_account_rai_policies : k => v.id }
+}
 output "cognitive_account_rai_policies_base_policy_name" {
   description = "Map of base_policy_name values across all cognitive_account_rai_policies, keyed the same as var.cognitive_account_rai_policies"
   value       = { for k, v in azurerm_cognitive_account_rai_policy.cognitive_account_rai_policies : k => v.base_policy_name }
