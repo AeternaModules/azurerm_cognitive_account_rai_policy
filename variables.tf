@@ -22,13 +22,13 @@ EOT
     name                 = string
     mode                 = optional(string)
     tags                 = optional(map(string))
-    content_filter = object({
+    content_filter = list(object({
       block_enabled      = bool
       filter_enabled     = bool
       name               = string
       severity_threshold = string
       source             = string
-    })
+    }))
   }))
 }
 

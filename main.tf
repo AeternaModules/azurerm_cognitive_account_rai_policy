@@ -7,12 +7,15 @@ resource "azurerm_cognitive_account_rai_policy" "cognitive_account_rai_policies"
   mode                 = each.value.mode
   tags                 = each.value.tags
 
-  content_filter {
-    block_enabled      = each.value.content_filter.block_enabled
-    filter_enabled     = each.value.content_filter.filter_enabled
-    name               = each.value.content_filter.name
-    severity_threshold = each.value.content_filter.severity_threshold
-    source             = each.value.content_filter.source
+  dynamic "content_filter" {
+    for_each = each.value.content_filter
+    content {
+      block_enabled      = content_filter.value.block_enabled
+      filter_enabled     = content_filter.value.filter_enabled
+      name               = content_filter.value.name
+      severity_threshold = content_filter.value.severity_threshold
+      source             = content_filter.value.source
+    }
   }
 }
 
