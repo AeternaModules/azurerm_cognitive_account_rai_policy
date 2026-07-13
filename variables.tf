@@ -30,5 +30,13 @@ EOT
       source             = string
     }))
   }))
+  validation {
+    condition = alltrue([
+      for k, v in var.cognitive_account_rai_policies : (
+        length(v.content_filter) >= 1
+      )
+    ])
+    error_message = "Each content_filter list must contain at least 1 items"
+  }
 }
 
