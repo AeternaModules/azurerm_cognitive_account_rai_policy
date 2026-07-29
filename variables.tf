@@ -9,7 +9,7 @@ Required:
         - block_enabled (required)
         - filter_enabled (required)
         - name (required)
-        - severity_threshold (required)
+        - severity_threshold (optional)
         - source (required)
 Optional:
     - mode
@@ -26,7 +26,7 @@ EOT
       block_enabled      = bool
       filter_enabled     = bool
       name               = string
-      severity_threshold = string
+      severity_threshold = optional(string)
       source             = string
     }))
   }))
